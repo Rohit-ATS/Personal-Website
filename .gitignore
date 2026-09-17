@@ -1,0 +1,11 @@
+*.pdf
+*.docx
+*.py
+resume_pdf_qa/
+resume_pdf_qa_final/
+resume_pdf_qa_final2/
+resume_pdf_qa_methodology/
+resume_pdf_qa_update/
+reference-hero.css
+hero.svg
+.DS_Store
