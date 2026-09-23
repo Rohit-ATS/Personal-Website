@@ -1,4 +1,7 @@
 *.pdf
+# The one exception: the resume is the file the download buttons point at,
+# so it has to ship. Without this the site builds with a dead link.
+!assets/Rohit_Maruri_Resume.pdf
 *.docx
 *.py
 resume_pdf_qa/
