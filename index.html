@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <title>Rohit Maruri — Software Engineer</title>
-<meta name="description" content="Rohit Maruri — computer science at San Francisco Bay University, undergraduate researcher on AWS Trainium and Neuron, and an Extern at Wayfair. Graph systems, agent runtimes, and developer infrastructure." />
+<meta name="description" content="Rohit Maruri. CS student at San Francisco Bay University, doing AWS Trainium research and an externship at Wayfair. Six public repos, with the line counts and test counts listed." />
 <meta name="author" content="Rohit Maruri" />
 <meta name="theme-color" content="#FAF4ED" />
 <link rel="canonical" href="https://rohitmaruri.is-a.dev/" />
@@ -12,7 +12,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://rohitmaruri.is-a.dev/" />
 <meta property="og:title" content="Rohit Maruri — Software Engineer" />
-<meta property="og:description" content="Graph systems, agent runtimes, developer infrastructure. The shape of the data decides which questions you are allowed to ask." />
+<meta property="og:description" content="CS student at San Francisco Bay University. AWS Trainium research, an externship at Wayfair, and six public repos you can read." />
 <meta property="og:image" content="https://rohitmaruri.is-a.dev/assets/portrait.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
@@ -81,13 +81,10 @@
 
     <p class="pill"><span class="dot" aria-hidden="true"></span>Open to internships &amp; hackathon teams</p>
 
-    <h1>I build developer infrastructure — graph systems, agent runtimes, and caches that key on meaning</h1>
+    <h1>I build developer tools and the systems under them</h1>
 
     <p class="hero-lede">
-      Computer science at San Francisco Bay University, undergraduate researcher on AWS Trainium
-      and Neuron, and an Extern at Wayfair. I am drawn to the problems where the popular tool is the
-      wrong <em>shape</em> for the question — where everyone reaches for a vector index and the question
-      was never about similarity.
+      CS student at San Francisco Bay University, doing AWS Trainium research and an externship at Wayfair.
     </p>
 
     <div class="hero-cta">
@@ -97,9 +94,9 @@
 
     <div class="hero-stats">
       <div class="stat"><b data-count="4.0" data-dec="1">0</b><span>GPA</span></div>
-      <div class="stat"><b data-count="6">0</b><span>Shipped systems</span></div>
-      <div class="stat"><b data-count="347">0</b><span>Tests in Airlock</span></div>
-      <div class="stat"><b data-count="3">0</b><span>Weeks to MVP</span></div>
+      <div class="stat"><b data-count="347">0</b><span>tests in Airlock</span></div>
+      <div class="stat"><b data-count="27" data-suffix="k">0</b><span>lines in Blast Radius</span></div>
+      <div class="stat"><b data-count="6">0</b><span>sources in DOCKET</span></div>
     </div>
 
   </div>
@@ -117,7 +114,7 @@
 <section class="section" id="work">
   <header class="section-head reveal">
     <h2>Work samples</h2>
-    <p>Six systems, each built around one decision about how the data is shaped. The code is public and the tests are in the repo.</p>
+    <p>Six projects. Every repo below is public, and the line counts and test counts are what's actually in them.</p>
   </header>
 
   <div class="work-grid">
@@ -128,12 +125,13 @@
         <span class="card-meta">27k lines · 381 tests · MIT</span>
       </div>
       <h3>Blast Radius</h3>
-      <p class="card-lede">When an npm package is compromised, defenders have minutes to answer one question: who is actually exposed, right now?</p>
-      <p>A transitive reverse-dependency closure is not a similarity problem — it is a graph traversal, five hops deep, over tens of millions of versioned nodes. So the graph is stored twice: a collapsed <code>Package→Package</code> layer so traversal stays flat as depth grows, and a version-precise <code>Release→Package</code> layer underneath so the forensic questions stay answerable.</p>
+      <p class="card-lede">Works out which packages an npm compromise actually reaches.</p>
+      <p>The awkward part is that a reverse-dependency closure runs about five hops deep over tens of millions of versioned nodes, and similarity search can't answer that at all. So the graph gets stored twice: a collapsed <code>Package→Package</code> layer that keeps traversal flat as depth grows, and a version-precise <code>Release→Package</code> layer underneath for the forensic questions.</p>
       <ul class="card-points">
-        <li>Reduced supply-chain analysis to three operations: traversal, semver resolution, OSV correlation</li>
-        <li>Live <code>osv.dev</code> lookups — no crawl coverage required</li>
-        <li>Deployed monitoring and API surfaces with signed webhooks</li>
+        <li>Three operations cover the workflow: traversal, semver resolution, OSV correlation</li>
+        <li>Vulnerability lookups hit <code>osv.dev</code> live, so there's no crawl coverage to maintain</li>
+        <li>381 passing tests, plus deployed monitoring and an API with signed webhooks</li>
+        <li>Built solo over a hackathon weekend for Hack Hydra</li>
       </ul>
       <div class="tags"><span>Python</span><span>FastAPI</span><span>HydraDB</span><span>OpenCypher</span><span>SQLite</span><span>Docker</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/blast-radius" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
@@ -145,28 +143,29 @@
         <span class="card-meta">347 tests · zero write-tools</span>
       </div>
       <h3>Airlock</h3>
-      <p class="card-lede">Nothing reaches production without passing through the airlock.</p>
-      <p>A change-control console where every irreversible production change is proven on a shadow copy before a human is ever asked to approve it. Proposals execute against a shadow database, checksums are verified, rollback is prepared — and approval is withheld until the proof passes.</p>
+      <p class="card-lede">A change-control console that proves a production change before anyone approves it.</p>
+      <p>Every proposal runs against a shadow copy of the database first. Checksums get verified, rollback is prepared, and approval stays blocked until the proof passes. Agents never hold a tool that can write to production.</p>
       <ul class="card-points">
-        <li>347 documented passing tests; zero production-write tools exposed to agents</li>
-        <li>Policy gates plus tamper-evident ledgers on every proposal</li>
-        <li>CodeQL in CI and an MCP tool layer for agent integration</li>
+        <li>347 documented passing tests</li>
+        <li>Zero production-write tools exposed to agents</li>
+        <li>Policy gates and tamper-evident ledgers on every proposal</li>
+        <li>CodeQL runs in CI, and there's an MCP tool layer for agent integration</li>
       </ul>
       <div class="tags"><span>TypeScript</span><span>PostgreSQL</span><span>MCP</span><span>CI / CodeQL</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/Airlock" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
 
     <article class="card reveal">
-      <div class="card-top"><span class="kicker">Personal project · Civic platform</span></div>
+      <div class="card-top"><span class="kicker">Personal project · Civic platform</span><span class="card-meta">6 sources</span></div>
       <h3>DOCKET</h3>
-      <p>Six civic information sources unified into one neighborhood platform for Fremont residents — records, news, incidents, places, posts, and issue voting in a single workspace. Answer traceability comes from source-grounded retrieval with citation verification, so every claim on screen points back at the record that produced it.</p>
+      <p>Pulls six civic sources into one place for Fremont residents: records, news, incidents, places, community posts, and issue voting. Retrieval is source-grounded and citations get verified, so every answer points back at the record it came from and you can go check it yourself.</p>
       <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>FastAPI</span><span>Bedrock AgentCore</span><span>Aurora DSQL</span><span>S3 Vectors</span><span>BM25</span></div>
     </article>
 
     <article class="card reveal">
       <div class="card-top"><span class="kicker">Personal project · LLM infrastructure</span><span class="card-meta">~4.8k lines</span></div>
       <h3>Semantic Output Cache</h3>
-      <p>Exact-match caches never hit on LLM traffic — nobody phrases it the same way twice. This one embeds each output and serves it when cosine similarity clears a threshold, combining embeddings with SHA-256 identity so cache-hit coverage extends well past literal text matches. Only key hashes are stored; JS and Python SDKs, threat model in the repo.</p>
+      <p>Exact-match caches almost never hit on LLM traffic, because nobody phrases a prompt the same way twice. This one embeds each output and serves it once cosine similarity clears a threshold, with SHA-256 identity alongside it. Only key hashes get stored. JS and Python SDKs, and the threat model is in the repo.</p>
       <div class="tags"><span>Python</span><span>JavaScript</span><span>PostgreSQL</span><span>pgvector</span><span>Embeddings</span><span>SHA-256</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/semantic-output-cache" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
@@ -174,7 +173,7 @@
     <article class="card reveal">
       <div class="card-top"><span class="kicker">Vivedly Labs · Desktop agent</span><span class="card-meta">~11k lines</span></div>
       <h3>Vivedly AI</h3>
-      <p>A proactive desktop coworker that watches what you are working on and surfaces the right action before you ask. A five-tier memory hierarchy — RAM, SQLite, patterns, vector, long-term — instead of one vector DB. Native desktop control, an MCP tool layer, streaming voice, and connectors for Gmail, Slack, Notion, and GitHub. Built to MVP in three weeks; earned acceptance to Founder Institute Silicon Valley and NVIDIA Inception.</p>
+      <p>A desktop assistant that watches what you're working on and suggests the next action before you ask for it. Memory sits in five tiers rather than one vector DB: RAM, SQLite, patterns, vector, long-term. Native desktop control, an MCP tool layer, streaming voice, and connectors for Gmail, Slack, Notion, and GitHub. The MVP took three weeks and got us into Founder Institute Silicon Valley and the NVIDIA Inception Program.</p>
       <div class="tags"><span>Electron</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>MCP</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/Vivedly-AI" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
@@ -182,7 +181,7 @@
     <article class="card reveal">
       <div class="card-top"><span class="kicker">Personal project · Financial systems</span><span class="card-meta">~20k lines</span></div>
       <h3>Meridian</h3>
-      <p>A financial terminal with fifteen views, options priced with Black-Scholes, and tax lots tracked individually rather than by average basis — because an average cost basis makes harvesting advice quietly wrong. Market data is simulated on purpose: it runs with no API key, and the live feed swaps at a single function.</p>
+      <p>A financial terminal with fifteen views, options priced with Black-Scholes, and tax lots tracked one at a time instead of by average basis. Average cost basis quietly breaks harvesting advice, which is the whole reason for the extra bookkeeping. Market data is simulated on purpose, so it runs with no API key and the live feed swaps at one function.</p>
       <div class="tags"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Black-Scholes</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/meridian" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
@@ -194,7 +193,7 @@
 <section class="section" id="experience">
   <header class="section-head reveal">
     <h2>About me</h2>
-    <p>Research, an externship, founding work, and the operations jobs that taught me to measure before claiming.</p>
+    <p>Research, an externship, one company, and the IT jobs I had before any of it.</p>
   </header>
 
   <ol class="timeline">
@@ -203,7 +202,7 @@
       <div class="tl-when">In progress</div>
       <div class="tl-body">
         <h3>Extern <span class="tl-org">Wayfair · n8n AI Agent Engineering Externship</span></h3>
-        <p>Building AI agent workflows in n8n against a real company brief, on a cohort programme run with Wayfair.</p>
+        <p>Building AI agent workflows in n8n against a real Wayfair brief, as part of a cohort programme.</p>
         <div class="tags"><span>n8n</span><span>AI agents</span><span>Workflow design</span></div>
       </div>
     </li>
@@ -213,8 +212,8 @@
       <div class="tl-when">Ongoing</div>
       <div class="tl-body">
         <h3>Undergraduate Researcher <span class="tl-org">AWS Trainium &amp; Neuron Research</span></h3>
-        <p>Building neural-network systems in C++ and developing machine-learning and convolutional neural-network models in Python, as part of an ongoing effort to create an image model that predicts outcomes from user inputs.</p>
-        <p>Advancing the research system through model design, experimentation, training, and evaluation while exploring AWS Trainium and Neuron for efficient AI workloads.</p>
+        <p>Writing the neural-network code in C++ and training CNNs in Python, for an image model that predicts outcomes from user inputs. My work covers model design, experiments, training runs, and evaluation.</p>
+        <p>Alongside that I'm looking at how AWS Trainium and Neuron handle the training workloads.</p>
         <div class="tags"><span>C++</span><span>Python</span><span>CNNs</span><span>Trainium / Neuron</span></div>
       </div>
     </li>
@@ -224,7 +223,7 @@
       <div class="tl-when">Founder</div>
       <div class="tl-body">
         <h3>Founder &amp; Product Lead <span class="tl-org">Vivedly Labs Inc.</span></h3>
-        <p>Built an AI desktop coworker MVP in three weeks, earning acceptance to <strong>Founder Institute Silicon Valley</strong> and support from the <strong>NVIDIA Inception Program</strong>.</p>
+        <p>Built the MVP of an AI desktop coworker in three weeks. It got us into <strong>Founder Institute Silicon Valley</strong> and the <strong>NVIDIA Inception Program</strong>.</p>
         <div class="tags"><span>Product</span><span>Electron</span><span>Agent systems</span></div>
       </div>
     </li>
@@ -234,7 +233,7 @@
       <div class="tl-when">Internship</div>
       <div class="tl-body">
         <h3>Software Engineer Intern <span class="tl-org">The Clarion</span></h3>
-        <p>Strengthened internal software operations by troubleshooting systems, managing access controls, maintaining web infrastructure, and supporting reliable technology delivery for the student newspaper.</p>
+        <p>Kept the student newspaper's systems running: troubleshooting, access control, and the web infrastructure behind publishing.</p>
       </div>
     </li>
 
@@ -243,7 +242,7 @@
       <div class="tl-when">Earlier</div>
       <div class="tl-body">
         <h3>IT Assistant <span class="tl-org">Dominion Academy of Dayton</span></h3>
-        <p>Maintained device, operating-system, network, and security operations to support reliable day-to-day technology use.</p>
+        <p>Day-to-day IT for the school: devices, operating systems, the network, and security.</p>
       </div>
     </li>
   </ol>
@@ -261,15 +260,15 @@
 <!-- PRINCIPLES -->
 <section class="section" id="principles">
   <header class="section-head reveal">
-    <h2>How I build</h2>
-    <p>Four rules I hold every project to. They are unglamorous, and they are where most of the real decisions end up.</p>
+    <h2>How I work</h2>
+    <p>Four habits, and what each one looks like in the repos above.</p>
   </header>
 
   <div class="principles">
-    <article class="rule-card reveal"><b>One</b><h3>No mocked data. Anywhere.</h3><p>Every number on every screen comes back from a query that was actually run — including empty states. A demo that lies is worse than no demo.</p></article>
-    <article class="rule-card reveal"><b>Two</b><h3>Measured, not claimed.</h3><p>Every panel in Blast Radius carries the latency of the query that produced it. If I say it is fast, there is a number next to the claim.</p></article>
-    <article class="rule-card reveal"><b>Three</b><h3>Secrets are a design problem.</h3><p>Not a checklist item. The <code>.gitignore</code> is a deliberate glob, because the explicit list already failed once — and that is the failure mode the pattern exists to prevent.</p></article>
-    <article class="rule-card reveal"><b>Four</b><h3>Commits explain the change.</h3><p>Not the diff. <em>Answer the lockfile question from the lockfile.</em> You can read the history and know what happened.</p></article>
+    <article class="rule-card reveal"><b>One</b><h3>No mocked data</h3><p>Every number on screen came back from a query that actually ran, empty states included. A demo that lies is worse than no demo.</p></article>
+    <article class="rule-card reveal"><b>Two</b><h3>A number next to the claim</h3><p>Each panel in Blast Radius shows the latency of the query that filled it, so "fast" isn't something you have to take my word for.</p></article>
+    <article class="rule-card reveal"><b>Three</b><h3>Secrets are a design problem</h3><p>That <code>.gitignore</code> uses a glob on purpose. The explicit list had already missed <code>.env.production</code> once, which is the exact thing the glob prevents.</p></article>
+    <article class="rule-card reveal"><b>Four</b><h3>Commits explain the change</h3><p>Not the diff. <em>Answer the lockfile question from the lockfile.</em> You can read the history and follow what happened.</p></article>
   </div>
 </section>
 
@@ -277,14 +276,14 @@
 <section class="section" id="stack">
   <header class="section-head reveal">
     <h2>Skills</h2>
-    <p>What I reach for, and what I have actually shipped with.</p>
+    <p>What I reach for, and what I've actually shipped with.</p>
   </header>
 
   <div class="stack-grid">
     <div class="stack-col reveal">
       <h3>Languages</h3>
       <div class="chips"><span class="chip chip-hi">C++</span><span class="chip">Python</span><span class="chip">TypeScript</span><span class="chip">JavaScript</span><span class="chip">SQL</span><span class="chip">OpenCypher</span></div>
-      <p class="muted">C++ is where the current research lives — extensive and ongoing.</p>
+      <p class="muted">C++ is where the research work lives, so it's the one I'm in most days.</p>
     </div>
     <div class="stack-col reveal">
       <h3>Systems &amp; data</h3>
@@ -306,7 +305,7 @@
   <div class="resume-panel reveal">
     <div class="resume-copy">
       <h2>Résumé</h2>
-      <p>One page. Education, research, founding work, four projects, and the full skills list.</p>
+      <p>One page: education, research, the company, four projects, and the full skills list.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="assets/Rohit_Maruri_Resume.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span>Download PDF</span></a>
         <a class="btn btn-ghost" href="assets/Rohit_Maruri_Resume.pdf" target="_blank" rel="noreferrer"><span>Open in browser</span></a>
@@ -327,8 +326,8 @@
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="contact-inner reveal">
-    <h2>Let us build something</h2>
-    <p>I move fast, and I would rather build the hard version. If you are working on graph systems, agent infrastructure, or developer tooling — or you want someone who ships over a hackathon weekend and still writes the tests — I would like to hear from you.</p>
+    <h2>Get in touch</h2>
+    <p>If you're working on graph systems, agent infrastructure, or developer tooling, I'd like to hear about it. Email is the fastest way to reach me.</p>
 
     <div class="contact-grid">
       <a class="contact-card" href="mailto:rohitmaruriats@gmail.com">
@@ -355,7 +354,7 @@
 
 <footer class="footer">
   <p>© <span id="year">2026</span> Rohit Maruri · Fremont, CA</p>
-  <p class="muted">Everything here is a link. The code is public and the tests are in the repo.</p>
+  <p class="muted">Everything here is a link. The code is public and the tests are in the repos.</p>
   <a href="#top" class="to-top">Back to top<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 </footer>
 

@@ -125,7 +125,8 @@
   function runCounter(el) {
     var target = parseFloat(el.getAttribute('data-count'));
     var decimals = parseInt(el.getAttribute('data-dec') || '0', 10);
-    if (reduced) { el.textContent = target.toFixed(decimals); return; }
+    var suffix = el.getAttribute('data-suffix') || '';
+    if (reduced) { el.textContent = target.toFixed(decimals) + suffix; return; }
 
     var duration = 1300;
     var start = null;
@@ -133,9 +134,9 @@
       if (start === null) start = ts;
       var p = Math.min((ts - start) / duration, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased).toFixed(decimals);
+      el.textContent = (target * eased).toFixed(decimals) + suffix;
       if (p < 1) window.requestAnimationFrame(step);
-      else el.textContent = target.toFixed(decimals);
+      else el.textContent = target.toFixed(decimals) + suffix;
     }
     window.requestAnimationFrame(step);
   }
