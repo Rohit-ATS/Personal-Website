@@ -1,53 +1,47 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Rohit Maruri — Developer Infrastructure</title>
-<meta name="description" content="Rohit Maruri — computer science at San Francisco Bay University. I build developer infrastructure: graph databases, semantic caches, agent runtimes, and change-control systems." />
+<title>Rohit Maruri — Software Engineer</title>
+<meta name="description" content="Rohit Maruri — computer science at San Francisco Bay University, undergraduate researcher on AWS Trainium and Neuron, and an Extern at Wayfair. Graph systems, agent runtimes, and developer infrastructure." />
 <meta name="author" content="Rohit Maruri" />
-<meta name="theme-color" content="#060911" />
+<meta name="theme-color" content="#FAF4ED" />
 <link rel="canonical" href="https://rohitmaruri.is-a.dev/" />
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://rohitmaruri.is-a.dev/" />
-<meta property="og:title" content="Rohit Maruri — Developer Infrastructure" />
-<meta property="og:description" content="Graph databases, semantic caches, agent runtimes. The shape of the data decides which questions you are allowed to ask." />
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/167649463?v=4" />
+<meta property="og:title" content="Rohit Maruri — Software Engineer" />
+<meta property="og:description" content="Graph systems, agent runtimes, developer infrastructure. The shape of the data decides which questions you are allowed to ask." />
+<meta property="og:image" content="https://rohitmaruri.is-a.dev/assets/portrait.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23060911'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='52' font-weight='700' fill='%2310B981' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%23FAF4ED'/%3E%3Ctext x='50' y='70' font-family='Georgia,serif' font-style='italic' font-size='56' font-weight='700' fill='%239D522C' text-anchor='middle'%3ER%3C/text%3E%3C/svg%3E" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Rohit Maruri","url":"https://rohitmaruri.is-a.dev/","email":"mailto:rohitmaruriats@gmail.com","telephone":"+1-510-371-3752","jobTitle":"Computer Science Student & Undergraduate Researcher","alumniOf":{"@type":"CollegeOrUniversity","name":"San Francisco Bay University"},"sameAs":["https://github.com/Rohit-ATS","https://www.linkedin.com/in/rohitmaruri/"],"knowsAbout":["Graph databases","Distributed systems","Machine learning infrastructure","Developer tooling","C++","Python","TypeScript"]}
+{"@context":"https://schema.org","@type":"Person","name":"Rohit Maruri","url":"https://rohitmaruri.is-a.dev/","image":"https://rohitmaruri.is-a.dev/assets/portrait.jpg","email":"mailto:rohitmaruriats@gmail.com","telephone":"+1-510-371-3752","jobTitle":"Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Fremont","addressRegion":"CA","addressCountry":"US"},"alumniOf":{"@type":"CollegeOrUniversity","name":"San Francisco Bay University"},"sameAs":["https://github.com/Rohit-ATS","https://www.linkedin.com/in/rohitmaruri/"],"knowsAbout":["Graph databases","Distributed systems","Machine learning infrastructure","Developer tooling","C++","Python","TypeScript"]}
 </script>
 </head>
 
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<canvas id="constellation" aria-hidden="true"></canvas>
 <div class="grain" aria-hidden="true"></div>
-<div class="spotlight" aria-hidden="true"></div>
 <div class="scroll-progress" aria-hidden="true"><span id="progressBar"></span></div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
-  <a class="nav-mark" href="#top" aria-label="Rohit Maruri — home">
-    <span class="mark-glyph">RM</span>
-    <span class="mark-text">Rohit Maruri</span>
-  </a>
+  <a class="wordmark" href="#top">Rohit Maruri</a>
 
   <nav class="nav-links" aria-label="Sections">
+    <a href="#top">Home</a>
     <a href="#work">Work</a>
-    <a href="#experience">Experience</a>
-    <a href="#stack">Stack</a>
-    <a href="#resume">Résumé</a>
+    <a href="#experience">About</a>
     <a href="#contact">Contact</a>
   </nav>
 
@@ -56,7 +50,6 @@
       <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9"/></svg>
     </button>
-    <a class="btn btn-ghost nav-cta" href="#contact">Get in touch</a>
     <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span>
     </button>
@@ -64,8 +57,9 @@
 </header>
 
 <div class="mobile-menu" id="mobileMenu" hidden>
+  <a href="#top">Home</a>
   <a href="#work">Work</a>
-  <a href="#experience">Experience</a>
+  <a href="#experience">About</a>
   <a href="#stack">Stack</a>
   <a href="#resume">Résumé</a>
   <a href="#contact">Contact</a>
@@ -75,46 +69,40 @@
 
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
-
   <div class="hero-inner">
-    <p class="eyebrow reveal"><span class="pulse"></span>Open to internships · hackathon teams · OSS</p>
 
-    <h1 class="display" id="heroName" aria-label="Rohit Maruri">
-      <span class="line"><span class="w">Rohit</span></span>
-      <span class="line"><span class="w accent">Maruri</span></span>
-    </h1>
-
-    <p class="hero-sub reveal">
-      I build <span class="type-target" id="typer" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
-    </p>
-
-    <p class="hero-copy reveal">
-      Computer science at <strong>San Francisco Bay University</strong>, GPA 4.0, and an undergraduate
-      researcher on <strong>AWS Trainium &amp; Neuron</strong>. I am drawn to the problems where the popular
-      tool is the wrong <em>shape</em> for the question — where everyone reaches for a vector index and the
-      question was never about similarity.
-    </p>
-
-    <p class="hero-thesis reveal">
-      <span class="quote-bar" aria-hidden="true"></span>
-      The shape of the data decides which questions you are allowed to ask.
-    </p>
-
-    <div class="hero-cta reveal">
-      <a class="btn btn-solid" href="#work"><span>See the work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost" href="assets/Rohit_Maruri_Resume.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span>Download résumé</span></a>
+    <div class="portrait-wrap">
+      <img src="assets/portrait.jpg" alt="Rohit Maruri" width="720" height="720" fetchpriority="high" />
+      <svg class="arc" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><path id="arcPath" d="M 5,50 a 45,45 0 0,0 90,0" fill="none" /></defs>
+        <text><textPath href="#arcPath" startOffset="50%" text-anchor="middle">Currently an Extern @Wayfair</textPath></text>
+      </svg>
     </div>
 
-    <div class="hero-stats reveal">
+    <p class="pill"><span class="dot" aria-hidden="true"></span>Open to internships &amp; hackathon teams</p>
+
+    <h1>I build developer infrastructure — graph systems, agent runtimes, and caches that key on meaning</h1>
+
+    <p class="hero-lede">
+      Computer science at San Francisco Bay University, undergraduate researcher on AWS Trainium
+      and Neuron, and an Extern at Wayfair. I am drawn to the problems where the popular tool is the
+      wrong <em>shape</em> for the question — where everyone reaches for a vector index and the question
+      was never about similarity.
+    </p>
+
+    <div class="hero-cta">
+      <a class="btn btn-solid" href="#work"><span>View my work</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost" href="mailto:rohitmaruriats@gmail.com"><span>Message me</span></a>
+    </div>
+
+    <div class="hero-stats">
       <div class="stat"><b data-count="4.0" data-dec="1">0</b><span>GPA</span></div>
       <div class="stat"><b data-count="6">0</b><span>Shipped systems</span></div>
       <div class="stat"><b data-count="347">0</b><span>Tests in Airlock</span></div>
       <div class="stat"><b data-count="3">0</b><span>Weeks to MVP</span></div>
     </div>
-  </div>
 
-  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+  </div>
 </section>
 
 <!-- MARQUEE -->
@@ -128,21 +116,19 @@
 <!-- WORK -->
 <section class="section" id="work">
   <header class="section-head reveal">
-    <span class="sec-num">01</span>
-    <h2>Selected work</h2>
+    <h2>Work samples</h2>
     <p>Six systems, each built around one decision about how the data is shaped. The code is public and the tests are in the repo.</p>
   </header>
 
   <div class="work-grid">
 
-    <article class="card card-lg reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
+    <article class="card card-lg reveal">
       <div class="card-top">
-        <span class="badge badge-emerald">Graph systems</span>
+        <span class="kicker">Personal project · Graph systems</span>
         <span class="card-meta">27k lines · 381 tests · MIT</span>
       </div>
       <h3>Blast Radius</h3>
-      <p class="card-lede">When an npm package is compromised, defenders have minutes to answer one question: <em>who is actually exposed, right now?</em></p>
+      <p class="card-lede">When an npm package is compromised, defenders have minutes to answer one question: who is actually exposed, right now?</p>
       <p>A transitive reverse-dependency closure is not a similarity problem — it is a graph traversal, five hops deep, over tens of millions of versioned nodes. So the graph is stored twice: a collapsed <code>Package→Package</code> layer so traversal stays flat as depth grows, and a version-precise <code>Release→Package</code> layer underneath so the forensic questions stay answerable.</p>
       <ul class="card-points">
         <li>Reduced supply-chain analysis to three operations: traversal, semver resolution, OSV correlation</li>
@@ -153,10 +139,9 @@
       <a class="card-link" href="https://github.com/Rohit-ATS/blast-radius" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
 
-    <article class="card card-lg reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
+    <article class="card card-lg reveal">
       <div class="card-top">
-        <span class="badge badge-violet">Agent safety</span>
+        <span class="kicker">Personal project · Agent safety</span>
         <span class="card-meta">347 tests · zero write-tools</span>
       </div>
       <h3>Airlock</h3>
@@ -171,35 +156,31 @@
       <a class="card-link" href="https://github.com/Rohit-ATS/Airlock" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
 
-    <article class="card reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
-      <div class="card-top"><span class="badge badge-cyan">Civic platform</span></div>
+    <article class="card reveal">
+      <div class="card-top"><span class="kicker">Personal project · Civic platform</span></div>
       <h3>DOCKET</h3>
       <p>Six civic information sources unified into one neighborhood platform for Fremont residents — records, news, incidents, places, posts, and issue voting in a single workspace. Answer traceability comes from source-grounded retrieval with citation verification, so every claim on screen points back at the record that produced it.</p>
       <div class="tags"><span>Next.js</span><span>React</span><span>TypeScript</span><span>FastAPI</span><span>Bedrock AgentCore</span><span>Aurora DSQL</span><span>S3 Vectors</span><span>BM25</span></div>
     </article>
 
-    <article class="card reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
-      <div class="card-top"><span class="badge badge-emerald">LLM infrastructure</span><span class="card-meta">~4.8k lines</span></div>
+    <article class="card reveal">
+      <div class="card-top"><span class="kicker">Personal project · LLM infrastructure</span><span class="card-meta">~4.8k lines</span></div>
       <h3>Semantic Output Cache</h3>
       <p>Exact-match caches never hit on LLM traffic — nobody phrases it the same way twice. This one embeds each output and serves it when cosine similarity clears a threshold, combining embeddings with SHA-256 identity so cache-hit coverage extends well past literal text matches. Only key hashes are stored; JS and Python SDKs, threat model in the repo.</p>
       <div class="tags"><span>Python</span><span>JavaScript</span><span>PostgreSQL</span><span>pgvector</span><span>Embeddings</span><span>SHA-256</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/semantic-output-cache" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
 
-    <article class="card reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
-      <div class="card-top"><span class="badge badge-violet">Desktop agent</span><span class="card-meta">~11k lines</span></div>
+    <article class="card reveal">
+      <div class="card-top"><span class="kicker">Vivedly Labs · Desktop agent</span><span class="card-meta">~11k lines</span></div>
       <h3>Vivedly AI</h3>
       <p>A proactive desktop coworker that watches what you are working on and surfaces the right action before you ask. A five-tier memory hierarchy — RAM, SQLite, patterns, vector, long-term — instead of one vector DB. Native desktop control, an MCP tool layer, streaming voice, and connectors for Gmail, Slack, Notion, and GitHub. Built to MVP in three weeks; earned acceptance to Founder Institute Silicon Valley and NVIDIA Inception.</p>
       <div class="tags"><span>Electron</span><span>React</span><span>TypeScript</span><span>SQLite</span><span>MCP</span></div>
       <a class="card-link" href="https://github.com/Rohit-ATS/Vivedly-AI" target="_blank" rel="noreferrer">View repository<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
     </article>
 
-    <article class="card reveal" data-tilt>
-      <div class="card-glow" aria-hidden="true"></div>
-      <div class="card-top"><span class="badge badge-cyan">Financial systems</span><span class="card-meta">~20k lines</span></div>
+    <article class="card reveal">
+      <div class="card-top"><span class="kicker">Personal project · Financial systems</span><span class="card-meta">~20k lines</span></div>
       <h3>Meridian</h3>
       <p>A financial terminal with fifteen views, options priced with Black-Scholes, and tax lots tracked individually rather than by average basis — because an average cost basis makes harvesting advice quietly wrong. Market data is simulated on purpose: it runs with no API key, and the live feed swaps at a single function.</p>
       <div class="tags"><span>Next.js 16</span><span>React 19</span><span>TypeScript</span><span>Black-Scholes</span></div>
@@ -212,12 +193,21 @@
 <!-- EXPERIENCE -->
 <section class="section" id="experience">
   <header class="section-head reveal">
-    <span class="sec-num">02</span>
-    <h2>Experience</h2>
-    <p>Research, founding, and the operations work that taught me to measure before claiming.</p>
+    <h2>About me</h2>
+    <p>Research, an externship, founding work, and the operations jobs that taught me to measure before claiming.</p>
   </header>
 
   <ol class="timeline">
+    <li class="tl-item reveal">
+      <span class="tl-dot" aria-hidden="true"></span>
+      <div class="tl-when">In progress</div>
+      <div class="tl-body">
+        <h3>Extern <span class="tl-org">Wayfair · n8n AI Agent Engineering Externship</span></h3>
+        <p>Building AI agent workflows in n8n against a real company brief, on a cohort programme run with Wayfair.</p>
+        <div class="tags"><span>n8n</span><span>AI agents</span><span>Workflow design</span></div>
+      </div>
+    </li>
+
     <li class="tl-item reveal">
       <span class="tl-dot" aria-hidden="true"></span>
       <div class="tl-when">Ongoing</div>
@@ -271,24 +261,22 @@
 <!-- PRINCIPLES -->
 <section class="section" id="principles">
   <header class="section-head reveal">
-    <span class="sec-num">03</span>
     <h2>How I build</h2>
     <p>Four rules I hold every project to. They are unglamorous, and they are where most of the real decisions end up.</p>
   </header>
 
   <div class="principles">
-    <article class="rule reveal"><b>01</b><h3>No mocked data. Anywhere.</h3><p>Every number on every screen comes back from a query that was actually run — including empty states. A demo that lies is worse than no demo.</p></article>
-    <article class="rule reveal"><b>02</b><h3>Measured, not claimed.</h3><p>Every panel in Blast Radius carries the latency of the query that produced it. If I say it is fast, there is a number next to the claim.</p></article>
-    <article class="rule reveal"><b>03</b><h3>Secrets are a design problem.</h3><p>Not a checklist item. The <code>.gitignore</code> is a deliberate glob, because the explicit list already failed once — and that is the failure mode the pattern exists to prevent.</p></article>
-    <article class="rule reveal"><b>04</b><h3>Commits explain the change.</h3><p>Not the diff. <em>Answer the lockfile question from the lockfile.</em> You can read the history and know what happened.</p></article>
+    <article class="rule-card reveal"><b>One</b><h3>No mocked data. Anywhere.</h3><p>Every number on every screen comes back from a query that was actually run — including empty states. A demo that lies is worse than no demo.</p></article>
+    <article class="rule-card reveal"><b>Two</b><h3>Measured, not claimed.</h3><p>Every panel in Blast Radius carries the latency of the query that produced it. If I say it is fast, there is a number next to the claim.</p></article>
+    <article class="rule-card reveal"><b>Three</b><h3>Secrets are a design problem.</h3><p>Not a checklist item. The <code>.gitignore</code> is a deliberate glob, because the explicit list already failed once — and that is the failure mode the pattern exists to prevent.</p></article>
+    <article class="rule-card reveal"><b>Four</b><h3>Commits explain the change.</h3><p>Not the diff. <em>Answer the lockfile question from the lockfile.</em> You can read the history and know what happened.</p></article>
   </div>
 </section>
 
 <!-- STACK -->
 <section class="section" id="stack">
   <header class="section-head reveal">
-    <span class="sec-num">04</span>
-    <h2>Technical skills</h2>
+    <h2>Skills</h2>
     <p>What I reach for, and what I have actually shipped with.</p>
   </header>
 
@@ -308,7 +296,7 @@
     </div>
     <div class="stack-col reveal">
       <h3>Cloud &amp; AI</h3>
-      <div class="chips"><span class="chip">Bedrock AgentCore</span><span class="chip">S3 Vectors</span><span class="chip">AWS Trainium</span><span class="chip">AWS Neuron</span><span class="chip">LLM systems</span><span class="chip">Embeddings</span></div>
+      <div class="chips"><span class="chip">Bedrock AgentCore</span><span class="chip">S3 Vectors</span><span class="chip">AWS Trainium</span><span class="chip">AWS Neuron</span><span class="chip">LLM systems</span><span class="chip">Embeddings</span><span class="chip">n8n</span></div>
     </div>
   </div>
 </section>
@@ -317,12 +305,11 @@
 <section class="section" id="resume">
   <div class="resume-panel reveal">
     <div class="resume-copy">
-      <span class="sec-num">05</span>
       <h2>Résumé</h2>
       <p>One page. Education, research, founding work, four projects, and the full skills list.</p>
       <div class="hero-cta">
         <a class="btn btn-solid" href="assets/Rohit_Maruri_Resume.pdf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg><span>Download PDF</span></a>
-        <a class="btn btn-ghost" href="assets/Rohit_Maruri_Resume.pdf" target="_blank" rel="noreferrer"><span>Open in browser</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="btn btn-ghost" href="assets/Rohit_Maruri_Resume.pdf" target="_blank" rel="noreferrer"><span>Open in browser</span></a>
       </div>
     </div>
     <div class="resume-sheet" aria-hidden="true">
@@ -338,11 +325,10 @@
 </section>
 
 <!-- CONTACT -->
-<section class="section contact" id="contact">
+<section class="section" id="contact">
   <div class="contact-inner reveal">
-    <span class="sec-num">06</span>
     <h2>Let us build something</h2>
-    <p>I am a freshman, I move fast, and I would rather build the hard version. If you are working on graph systems, agent infrastructure, or developer tooling — or you want someone who ships over a hackathon weekend and still writes the tests — I would like to hear from you.</p>
+    <p>I move fast, and I would rather build the hard version. If you are working on graph systems, agent infrastructure, or developer tooling — or you want someone who ships over a hackathon weekend and still writes the tests — I would like to hear from you.</p>
 
     <div class="contact-grid">
       <a class="contact-card" href="mailto:rohitmaruriats@gmail.com">
@@ -368,7 +354,7 @@
 </main>
 
 <footer class="footer">
-  <p>© <span id="year">2026</span> Rohit Maruri</p>
+  <p>© <span id="year">2026</span> Rohit Maruri · Fremont, CA</p>
   <p class="muted">Everything here is a link. The code is public and the tests are in the repo.</p>
   <a href="#top" class="to-top">Back to top<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
 </footer>
